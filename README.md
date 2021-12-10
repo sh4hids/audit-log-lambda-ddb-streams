@@ -1,13 +1,13 @@
-# Koa Starter Kit (General)
+# audit-log-lambda-ddb-streams
 
 ### Clone and prepare kit
 
 ```bash
-git clone git@github.com:sh4hids/api-starter-kits.git -b koa-general
+git clone git@github.com:sh4hids/audit-log-lambda-ddb-streams.git
 ```
 
 ```bash
-cd api-starter-kits
+cd audit-log-lambda-ddb-streams
 ```
 
 ```bash
