@@ -1,0 +1,59 @@
+{
+  "name": "audit-log-function",
+  "version": "1.0.0",
+  "description": "A lambda function to save audit log",
+  "main": "index.js",
+  "engines": {
+    "node": "14"
+  },
+  "scripts": {
+    "start": "node build/index.js",
+    "dev": "nodemon dev.ts",
+    "build": "babel --delete-dir-on-start --out-dir build --copy-files --ignore \"**/__tests__/**,**/__mocks__/**\" --no-copy-ignored --extensions .js,.ts,.tsx src",
+    "lint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx .",
+    "prettier": "prettier --ignore-path .gitignore \"**/*.+(js|jsx|json|ts|tsx)\"",
+    "format": "npm run prettier -- --write",
+    "check-types": "tsc",
+    "check-format": "npm run prettier -- --list-different",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "validate": "npm-run-all --parallel check-types check-format lint test build",
+    "lint-staged": "lint-staged",
+    "prepare": "husky install"
+  },
+  "author": "Shahidul Islam Majumder <hello@shahid.pro>",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "^2.1045.0",
+    "date-fns": "^2.22.1",
+    "dotenv": "^10.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.5",
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
+    "@babel/preset-typescript": "^7.14.5",
+    "@babel/register": "^7.14.5",
+    "@trivago/prettier-plugin-sort-imports": "^2.0.2",
+    "@types/aws-lambda": "^8.10.86",
+    "@types/jest": "^27.0.3",
+    "@typescript-eslint/eslint-plugin": "^4.28.4",
+    "@typescript-eslint/parser": "^4.28.4",
+    "aws-lambda": "^1.0.7",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.29.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jest": "^24.3.6",
+    "eslint-plugin-prettier": "^3.4.0",
+    "husky": "^6.0.0",
+    "jest": "^27.0.5",
+    "lint-staged": "^11.0.0",
+    "nodemon": "^2.0.7",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.3.1",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.3.5"
+  }
+}
